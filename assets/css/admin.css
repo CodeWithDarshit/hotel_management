@@ -1,0 +1,467 @@
+/* Admin Panel Styling */
+:root {
+    --bg-admin-main: #0b0e14;
+    --bg-admin-sidebar: #11151f;
+    --bg-admin-card: #171d2b;
+    --border-admin: rgba(212, 175, 55, 0.12);
+    --primary-admin: #d4af37;
+    --text-admin-main: #f1f5f9;
+    --text-admin-muted: #94a3b8;
+    --shadow-admin: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --transition-admin: all 0.3s ease;
+}
+
+body.admin-body {
+    background-color: var(--bg-admin-main);
+    color: var(--text-admin-main);
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 100vh;
+}
+
+/* Admin Sidebar */
+.admin-sidebar {
+    background: var(--bg-admin-sidebar);
+    border-right: 1px solid var(--border-admin);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+.admin-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-admin);
+    letter-spacing: 1.5px;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 1rem;
+}
+
+.admin-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    flex-grow: 1;
+}
+
+.admin-nav-item a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 1.2rem;
+    color: var(--text-admin-muted);
+    font-size: 0.95rem;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.admin-nav-item a svg {
+    width: 20px;
+    height: 20px;
+    transition: var(--transition-admin);
+}
+
+.admin-nav-item.active a,
+.admin-nav-item a:hover {
+    background: rgba(212, 175, 55, 0.08);
+    color: var(--primary-admin);
+    font-weight: 600;
+}
+
+.admin-nav-item.active a svg,
+.admin-nav-item a:hover svg {
+    color: var(--primary-admin);
+}
+
+.admin-sidebar-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 1.5rem;
+}
+
+.admin-logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 1.2rem;
+    color: #ef4444;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    font-weight: 500;
+    width: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.admin-logout-btn:hover {
+    background: rgba(239, 68, 68, 0.08);
+}
+
+/* Admin Main Content */
+.admin-content {
+    padding: 2.5rem;
+    overflow-y: auto;
+    max-height: 100vh;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.admin-header-title h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 0 0.3rem 0;
+}
+
+.admin-header-title p {
+    color: var(--text-admin-muted);
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.admin-profile-badge {
+    background: var(--bg-admin-card);
+    border: 1px solid var(--border-admin);
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.admin-avatar {
+    width: 32px;
+    height: 32px;
+    background: var(--primary-admin);
+    color: var(--bg-admin-main);
+    font-weight: 600;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Stats Cards Grid */
+.admin-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.admin-stat-card {
+    background: var(--bg-admin-card);
+    border: 1px solid var(--border-admin);
+    border-radius: 8px;
+    padding: 1.8rem;
+    box-shadow: var(--shadow-admin);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-stat-info h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--text-admin-muted);
+    margin: 0 0 0.5rem 0;
+    letter-spacing: 0.5px;
+}
+
+.admin-stat-info .value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-admin-main);
+    margin: 0;
+}
+
+.admin-stat-info .value.gold {
+    color: var(--primary-admin);
+}
+
+.admin-stat-icon {
+    width: 55px;
+    height: 55px;
+    background: rgba(212, 175, 55, 0.06);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-admin);
+}
+
+.admin-stat-icon svg {
+    width: 26px;
+    height: 26px;
+}
+
+/* Dashboard Bottom Grid */
+.admin-dashboard-grid {
+    display: grid;
+    grid-template-columns: 1.8fr 1.2fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.admin-panel {
+    background: var(--bg-admin-card);
+    border: 1px solid var(--border-admin);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: var(--shadow-admin);
+}
+
+.admin-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 1rem;
+}
+
+.admin-panel-header h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.admin-panel-link {
+    font-size: 0.85rem;
+    color: var(--primary-admin);
+    font-weight: 500;
+}
+
+/* CSS-based Analytics Chart styling */
+.chart-container {
+    padding: 1rem 0;
+}
+
+.chart-bar-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.chart-bar-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.chart-bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-admin-muted);
+}
+
+.chart-bar-bg {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.chart-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #aa7c11, var(--primary-admin));
+    border-radius: 10px;
+}
+
+/* Actions list */
+.booking-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    border: none;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition-admin);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.action-btn.confirm {
+    background: rgba(59, 130, 246, 0.15);
+    color: #3b82f6;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.action-btn.confirm:hover {
+    background: #3b82f6;
+    color: #ffffff;
+}
+
+.action-btn.checkin {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.action-btn.checkin:hover {
+    background: #10b981;
+    color: #ffffff;
+}
+
+.action-btn.checkout {
+    background: rgba(107, 114, 128, 0.15);
+    color: #9ca3af;
+    border: 1px solid rgba(107, 114, 128, 0.3);
+}
+
+.action-btn.checkout:hover {
+    background: #9ca3af;
+    color: #ffffff;
+}
+
+.action-btn.cancel {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.action-btn.cancel:hover {
+    background: #ef4444;
+    color: #ffffff;
+}
+
+.action-btn.edit {
+    background: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.action-btn.edit:hover {
+    background: #f59e0b;
+    color: #ffffff;
+}
+
+.action-btn.delete {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.action-btn.delete:hover {
+    background: #ef4444;
+    color: #ffffff;
+}
+
+/* Add Room Button */
+.header-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-admin-action {
+    background: var(--primary-admin);
+    color: var(--bg-admin-main);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-admin-action:hover {
+    background: #f3e5ab;
+}
+
+/* Modals */
+.admin-modal {
+    display: none; /* Controlled by JS */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(7, 9, 14, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-modal-content {
+    background: var(--bg-admin-card);
+    border: 1px solid var(--border-admin);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-admin);
+    position: relative;
+}
+
+.admin-modal-close {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-admin-muted);
+}
+
+.admin-modal-close:hover {
+    color: var(--primary-admin);
+}
+
+.admin-modal h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    color: var(--primary-admin);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 0.5rem;
+}
+
+/* Admin Login Wrapper */
+.admin-login-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: var(--bg-admin-main);
+    padding: 1.5rem;
+}
+
+/* Responsive Admin */
+@media (max-width: 968px) {
+    body.admin-body {
+        grid-template-columns: 1fr;
+    }
+    .admin-sidebar {
+        display: none; /* Typically toggle sidebar via hamburger, but for now simple structure */
+    }
+    .admin-dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
